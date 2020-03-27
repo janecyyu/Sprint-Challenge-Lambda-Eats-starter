@@ -16,7 +16,10 @@ Edit this document to include your answers after each question. Make sure to lea
 A: This hook lets you add nested routes to your application such that you can change a single parameter in the URL without having to change the whole thing.
 
 2. How would you explain form validation to someone who has never programmed before?
+It's a connivent and fast way to check the values on your form's input fields conform the expectations.
+
 3. In 1-2 sentences, define end to end testing.
+it's testing which run from head to toes to check the behavior as expected.
 
 
 You are expected to be able to answer all these questions. Your responses contribute to your Sprint Challenge grade. Skipping this section **will** prevent you from passing this challenge.

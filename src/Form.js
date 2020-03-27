@@ -15,13 +15,13 @@ const PizzaForm = ({ isSubmitting, errors, status }) => {
       <label htmlFor="name">
         Name:
         <br />
-        <Field name="name" type="text" placeholder="name" />
+        <Field data-cy="name" name="name" type="text" />
       </label>{" "}
       <p>{errors.name}</p>
       <br />
       <label htmlFor="size">
         Pizza size:
-        <Field component="select" name="size">
+        <Field component="select" name="size" data-cy="size">
           <option value="L">Large</option>
           <option value="M">Medium</option>
           <option value="S">Small</option>
@@ -31,7 +31,7 @@ const PizzaForm = ({ isSubmitting, errors, status }) => {
       <label htmlFor="toppings">
         Toppings:
         <br />
-        <Field name="cheese" type="checkbox" />
+        <Field name="cheese" type="checkbox" id="cheese"/>
         Cheese
         <Field name="bacon" type="checkbox" />
         Bacon
@@ -51,7 +51,7 @@ const PizzaForm = ({ isSubmitting, errors, status }) => {
         />
       </label>
       <br />
-      <button disabled={isSubmitting}>Submit</button>
+      <button disabled={isSubmitting} data-cy="submit">Submit</button>
       {order.map(o => (
         <ul>
             <li>name: {o.name}</li>

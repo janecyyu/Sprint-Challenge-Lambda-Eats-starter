@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import { withFormik, Form, Field } from "formik";
 import * as yup from "yup";
 import axios from "axios";
+import SwitchesGroup from "./Switch";
+import './App.css';
 
 const PizzaForm = ({ isSubmitting, errors, status }) => {
   const [order, setOrder] = useState([]);
-  
+
   useEffect(() => {
     console.log("status has changed!", status);
-    status && setOrder(order => [...order, status])
+    status && setOrder(order => [...order, status]);
   }, [status]);
   return (
     <Form>
@@ -31,7 +33,7 @@ const PizzaForm = ({ isSubmitting, errors, status }) => {
       <label htmlFor="toppings">
         Toppings:
         <br />
-        <Field name="cheese" type="checkbox" id="cheese"/>
+        <Field name="cheese" type="checkbox" id="cheese" />
         Cheese
         <Field name="bacon" type="checkbox" />
         Bacon
@@ -41,6 +43,7 @@ const PizzaForm = ({ isSubmitting, errors, status }) => {
         Onion
       </label>
       <br />
+      <SwitchesGroup name="gluten"/><br/>
       <label>
         Special instructions:
         <br />
@@ -51,17 +54,19 @@ const PizzaForm = ({ isSubmitting, errors, status }) => {
         />
       </label>
       <br />
-      <button disabled={isSubmitting} data-cy="submit">Submit</button>
+      <button disabled={isSubmitting} data-cy="submit">
+        Submit
+      </button>
       {order.map(o => (
         <ul>
-            <li>name: {o.name}</li>
-      <li>size:{o.size}</li>
-      {console.log(o.cheese)}
-      <li>cheese:{o.cheese.toString()}</li>
-      <li>bacon:{o.bacon.toString()}</li>
-      <li>ham:{o.ham.toString()}</li>
-      <li>onion:{o.onion.toString()}</li>
-      <li>special:{o.myTextarea}</li>
+          <li>name: {o.name}</li>
+          <li>size:{o.size}</li>
+          <li>cheese:{o.cheese.toString()}</li>
+          <li>bacon:{o.bacon.toString()}</li>
+          <li>ham:{o.ham.toString()}</li>
+          <li>onion:{o.onion.toString()}</li>
+          <li>gluten free:</li>
+          <li>special:{o.myTextarea}</li>
         </ul>
       ))}
     </Form>

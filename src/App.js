@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-import Form from './Form';
+import FormikApp from './Form';
 
 const App = () => {
   return (
@@ -11,8 +11,8 @@ const App = () => {
           <Link to="/pizza">Pizza</Link>
       </nav>
       <Switch>
-      <Route exact path="/" component={Form} />
-      <Route path="/pizza" component={Form} />
+      <Route exact path="/"/>
+      <Route path="/pizza" component={FormikApp} />
       </Switch>
     </BrowserRouter>
   );
